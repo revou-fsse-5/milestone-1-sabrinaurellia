@@ -1,14 +1,12 @@
-/* styles.css */
 body {
     font-family: 'Source Sans Pro', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: #333;
 }
 
 header {
-    background: #d62a2a;
+    background-color: #333;
     color: white;
     padding: 10px 0;
 }
@@ -17,79 +15,85 @@ header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
 }
 
-nav ul {
+header nav ul {
     list-style: none;
+    margin: 0;
+    padding: 0;
     display: flex;
-    gap: 20px;
 }
 
-nav a {
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul li a {
     color: white;
     text-decoration: none;
+    font-weight: 600;
 }
 
 .hero {
     background: url('assets/images/hero-bg.jpg') no-repeat center center/cover;
-    text-align: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     color: white;
-    padding: 100px 20px;
+    text-align: center;
 }
 
 .hero h1 {
-    font-size: 3em;
-    margin: 0.5em 0;
+    font-size: 3rem;
+    margin: 0;
 }
 
 .hero p {
-    font-size: 1.5em;
+    font-size: 1.5rem;
+    margin: 10px 0;
 }
 
 .hero .btn {
-    background: red;
+    background-color: #ff0000;
     color: white;
     padding: 10px 20px;
     text-decoration: none;
+    font-weight: bold;
     border-radius: 5px;
-    display: inline-block;
     margin-top: 20px;
 }
 
-.about, .locations, .careers {
-    padding: 50px 20px;
-    text-align: center;
+section {
+    padding: 50px 0;
 }
 
-.about .container, .locations .container, .careers .container {
+section .container {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 20px;
 }
 
 .locations .location-list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
     gap: 20px;
 }
 
 .locations .location-item {
-    background: #f5f5f5;
-    padding: 20px;
-    border-radius: 5px;
     flex: 1;
-    min-width: 200px;
+    min-width: calc(25% - 20px);
     text-align: center;
 }
 
 .locations .location-item img {
     width: 100%;
-    border-radius: 5px;
+    height: auto;
 }
 
 footer {
-    background: #d62a2a;
+    background-color: #333;
     color: white;
     text-align: center;
     padding: 20px 0;
@@ -97,36 +101,65 @@ footer {
 
 footer ul {
     list-style: none;
+    margin: 10px 0 0 0;
+    padding: 0;
     display: flex;
     justify-content: center;
-    gap: 20px;
-    padding: 0;
-    margin: 20px 0 0 0;
 }
 
-footer a {
+footer ul li {
+    margin: 0 10px;
+}
+
+footer ul li a {
     color: white;
     text-decoration: none;
 }
 
+/* Media Queries */
 @media (max-width: 768px) {
-    nav ul {
+    header .container {
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
     }
 
-    .hero {
-        padding: 50px 20px;
+    header nav ul {
+        flex-direction: column;
+        align-items: flex-start;
     }
 
-    .locations .location-list {
-        flex-direction: column;
-        align-items: center;
+    header nav ul li {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .hero .btn {
+        padding: 8px 16px;
     }
 
     .locations .location-item {
-        flex: none;
-        width: 80%;
+        min-width: 100%;
     }
 }
 
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero p {
+        font-size: 0.875rem;
+    }
+
+    .hero .btn {
+        padding: 6px 12px;
+    }
+}
